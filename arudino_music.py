@@ -15,7 +15,6 @@ def main():
 
     import PySimpleGUI as sg
     import os
-    from collections import namedtuple
 
     newsong = sg.PopupGetText('newsong')
     if newsong.__contains__(' '):
@@ -83,14 +82,13 @@ def main():
     b_tamper = 0
     rest_val = False
     nt = False
-    complex = namedtuple('complex', ['snote', 'shar', 'sdegree', 'sbeat', 'srest', 'sdotted'])
+
 
     while True:
         event, value = window.read()
         if event == sg.WINDOW_CLOSED:
             break
         sadness = int(value['degree'])
-        print(event)
         if event == 'degree':
             disp = f'{d}{sadness}'
         if 'note' in str(event).split('_'):
